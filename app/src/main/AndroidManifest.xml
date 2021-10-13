@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quizapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QuizApp">
+        <activity
+            android:name=".StartTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".QuestionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddNewQuestions"
+            android:exported="true" />
+        <activity
+            android:name=".QuestionList"
+            android:exported="true" />
+        <activity
+            android:name=".QuestionBank"
+            android:exported="true" />
+        <activity
+            android:name=".AdminPanel"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
+            android:name=".LoginForm"
+            android:exported="true" />
+        <activity
+            android:name=".Questions"
+            android:exported="true" />
+        <activity
+            android:name=".Category"
+            android:exported="true" />
+        <activity
+            android:name=".Stats"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

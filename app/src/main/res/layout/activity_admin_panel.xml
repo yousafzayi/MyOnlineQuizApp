@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminPanel">
+
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:fontFamily="times"
+        android:text=" Admin Login"
+        android:textAlignment="center"
+        android:textSize="@dimen/_25sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_65sdp"
+        android:ems="10"
+        android:hint="User name"
+        android:text="admin"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:ems="10"
+        android:hint="Password"
+        android:text="123456"
+        android:inputType="textPassword"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <Button
+        android:id="@+id/cancelbtn"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:backgroundTint="#0ED69B"
+        android:text="Cancel"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:backgroundTint="#0ED69B"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

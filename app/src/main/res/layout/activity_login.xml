@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginForm">
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:fontFamily="times"
+        android:text="Login Form"
+        android:textAlignment="center"
+        android:textSize="@dimen/_25sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailadress"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:ems="10"
+        android:fontFamily="times"
+        android:hint="Email Adress"
+        android:text="bse21wajid@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <EditText
+        android:id="@+id/password_1"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:ems="10"
+        android:fontFamily="times"
+        android:hint="Password"
+        android:text="123456"
+        android:inputType="textPassword"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailadress" />
+    <Button
+        android:id="@+id/signIn"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:backgroundTint="#0ED69B"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_1"
+        android:layout_marginTop="@dimen/_30sdp"/>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="times"
+        android:text="Not having account? Register"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

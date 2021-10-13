@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/categoryFragment"
+        android:title="Home drawer"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/leaderBoardFragment2"
+        android:title="LeaderBoard drawer"
+        android:icon="@drawable/leaderboard"/>
+    <item
+        android:id="@+id/accountFragment2"
+        android:title="My Account drawer"
+        android:icon="@drawable/account"/>
+
+
+
+</menu>

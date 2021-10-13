@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/bar1"
+        android:layout_width="409dp"
+        android:layout_height="646dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_5sdp"
+        tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tvQNumbr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/roundbg2"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="@dimen/_15sdp"
+        android:text=" What is the name of our planet ?"
+        android:textColor="#7A8089"
+        android:textSize="@dimen/_17sdp" />
+
+
+
+    <TextView
+        android:id="@+id/tvOption1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/roundbg"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Rawalpindi"
+        android:textColor="#7A8089"
+        android:textSize="@dimen/_17sdp" />
+
+    <TextView
+        android:id="@+id/tvOption2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/roundbg"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Lahore"
+        android:textColor="#7A8089"
+        android:textSize="@dimen/_17sdp" />
+
+    <TextView
+        android:id="@+id/tvOption3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/roundbg"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Karachi"
+        android:textColor="#7A8089"
+        android:textSize="@dimen/_17sdp" />
+
+    <TextView
+        android:id="@+id/tvOption4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/roundbg"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Peshawar"
+        android:textColor="#7A8089"
+        android:textSize="@dimen/_17sdp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

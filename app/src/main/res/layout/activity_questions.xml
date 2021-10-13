@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Questions">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/quiz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/_3sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_20sdp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/backward_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:layout_constraintTop_toBottomOf="@id/top">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Time Left: 10sec"
+                android:textColor="#006996"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_nm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="1/20"
+                android:textColor="#006996"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info">
+
+            <LinearLayout
+                android:id="@+id/main_question_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="4.0">
+
+                <RelativeLayout
+                    android:id="@+id/qnummber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.8">
+
+                    <TextView
+                        android:id="@+id/text_view6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="1-"
+                        android:textColor="#006"
+                        android:textSize="@dimen/_18sdp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/child_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/main_questions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineHeight="@dimen/_25sdp"
+                        android:text="The length of the bridge, which a train 130 metres long and travelling at 45 km/hr can cross in 30 seconds, is:"
+                        android:textColor="#2D333C"
+                        android:textSize="@dimen/_17sdp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ListView
+            android:id="@+id/answer_containers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@color/white"
+            android:divider="@null"
+            android:dividerHeight="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/question_container" />
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/group_358"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/okay"
+        android:elevation="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:alpha="0.9">
+
+        <ListView
+            android:id="@+id/done_pop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/okay_shape"
+            android:divider="@null"
+            android:dividerHeight="@dimen/_15sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+     />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/_15sdp"
+    tools:context=".FragmentQuiz">
+
+
+
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0:30"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textSize="@dimen/_25sdp"
+        android:textColor="@color/purple_200"
+        app:layout_constraintTop_toTopOf="@id/bar1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/bar1"
+        android:layout_width="409dp"
+        android:layout_height="646dp"
+        android:gravity="center"
+        android:orientation="vertical"
+       android:layout_margin="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@id/timerText"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp">
+
+        <LinearLayout
+            android:id="@+id/abc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/progressBarr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="10"
+                android:minHeight="@dimen/_40sdp"
+                android:progress="0">
+
+            </SeekBar>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbg3"
+                android:gravity="center"
+               android:padding="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="0/10"
+                android:textColorHint="#7A8089"
+                android:textSize="@dimen/_16sdp">
+
+
+            </TextView>
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/tvQNumbr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/roundbg2"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/_15sdp"
+            android:text=" What is the name of our planet ?"
+            android:textColor="#7A8089"
+            android:textSize="@dimen/_17sdp" />
+
+
+
+        <TextView
+            android:id="@+id/tvOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/roundbg"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Rawalpindi"
+            android:textColor="#7A8089"
+            android:textSize="@dimen/_17sdp" />
+
+        <TextView
+            android:id="@+id/tvOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/roundbg"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Lahore"
+            android:textColor="#7A8089"
+            android:textSize="@dimen/_17sdp" />
+
+        <TextView
+            android:id="@+id/tvOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/roundbg"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Karachi"
+            android:textColor="#7A8089"
+            android:textSize="@dimen/_17sdp" />
+
+        <TextView
+            android:id="@+id/tvOption4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/roundbg"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Peshawar"
+            android:textColor="#7A8089"
+            android:textSize="@dimen/_17sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Skip"
+                android:textColor="#7A8089"
+                android:textSize="@dimen/_17sdp">
+
+            </Button>
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Next"
+                android:textColor="#7A8089"
+                android:textSize="@dimen/_17sdp">
+
+            </Button>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
