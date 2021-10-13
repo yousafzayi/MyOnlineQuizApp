@@ -1,6 +1,5 @@
 package com.example.quizapp.Adapters
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -68,12 +67,14 @@ class TestAdapter(var context: Context, myList: List<TestModel>?, var category: 
 
         holder.myCardViewToShowPercentage!!.setOnClickListener(View.OnClickListener {
 
-            Toast.makeText(context, ""+myCategoryName, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, ""+data.topScore, Toast.LENGTH_LONG).show()
 
             val intent = Intent(context, StartTestActivity::class.java)
             intent.putExtra("categoryName", myCategoryName)
+            intent.putExtra("myScore", data.topScore)
+            intent.putExtra("testNo", data.testId)
             context.startActivity(intent)
-            (context as Activity).finish()
+           // (context as Activity).finish()
         })
     }
 

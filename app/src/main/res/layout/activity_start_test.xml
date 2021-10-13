@@ -143,6 +143,7 @@
                         tools:ignore="RtlCompat" />
 
                     <TextView
+                        android:id="@+id/my_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

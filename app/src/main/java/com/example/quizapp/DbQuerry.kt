@@ -12,9 +12,6 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-
-
-
 object DbQuerry {
 
     val g_firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -75,6 +72,8 @@ history of login user like the marks in attempted quiz */
 //            .collection("Test_List").document("Test_Info")
 //            .get()
 
+        val user = FirebaseAuth.getInstance().currentUser
+
         g_firestore.collection("Quiz").document("DrtMu9NXRF0gq5973nqK")
             .collection("Test_List").document("Test_Info")
             .get().addOnCompleteListener(OnCompleteListener {
@@ -98,9 +97,28 @@ history of login user like the marks in attempted quiz */
                     val ID3 = document.getString("Test3_Id")
                     val Time3 = document.getString("Test3_Time")
 
-                    g_testList.add(TestModel(ID1, 0, Time1.toString()))
-                    g_testList.add(TestModel(ID2, 0, Time2.toString()))
-                    g_testList.add(TestModel(ID3, 0, Time3.toString()))
+                    g_firestore.collection("Users").document(FirebaseAuth.getInstance().currentUser!!.uid)
+                        .get().addOnCompleteListener { task ->
+                            if (task.isSuccessful() && task.getResult() != null) {
+                                val userTopScore = task.getResult()!!.getString("Total_score")
+
+//                                val email: String? = task.getResult()!!.getString("Email")
+//                                val phone: String? = task.getResult()!!.getString("Phone")
+//                                //other stuff
+
+                                g_testList.add(TestModel(ID1, userTopScore!!, Time1.toString()))
+                                g_testList.add(TestModel(ID2, userTopScore!!, Time2.toString()))
+                                g_testList.add(TestModel(ID3, userTopScore!!, Time3.toString()))
+
+                            } else {
+                                //deal with error
+                            }
+                        }
+
+
+//                    g_testList.add(TestModel(ID1, userTopScore!!, Time1.toString()))
+//                    g_testList.add(TestModel(ID2, userTopScore!!, Time2.toString()))
+//                    g_testList.add(TestModel(ID3, userTopScore!!, Time3.toString()))
 
 
                 }
