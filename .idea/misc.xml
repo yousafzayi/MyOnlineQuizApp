@@ -55,10 +55,15 @@
         <entry key="..\:/Users/Sorcim/Desktop/QuizApp/app/src/main/res/layout/activity_test.xml" value="0.3374094202898551" />
         <entry key="..\:/Users/Sorcim/Desktop/QuizApp/app/src/main/res/layout/cat_item_layout.xml" value="0.333786231884058" />
         <entry key="..\:/Users/Sorcim/Desktop/QuizApp/app/src/main/res/layout/test_item_layout.xml" value="0.3374094202898551" />
+        <entry key="..\:/Users/Wajid Ali/Desktop/QuizApp/app/src/main/res/drawable/selected_btn.xml" value="0.1" />
+        <entry key="..\:/Users/Wajid Ali/Desktop/QuizApp/app/src/main/res/drawable/unselected_btn.xml" value="0.1" />
+        <entry key="..\:/Users/Wajid Ali/Desktop/QuizApp/app/src/main/res/layout/activity_question.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Wajid Ali/Desktop/QuizApp/app/src/main/res/layout/fragment_category.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/Wajid Ali/Desktop/QuizApp/app/src/main/res/layout/queston_item_layout.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

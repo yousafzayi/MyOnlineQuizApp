@@ -7,5 +7,5 @@ data class QuestionModel(
     var optionB: String,
     var optionC: String,
     var optionD: String,
-    var correctAnswer: Int,
+    var selectedAns: Long?,
 )

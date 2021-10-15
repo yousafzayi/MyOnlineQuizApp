@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_margin="@dimen/_8sdp"
+        android:padding="@dimen/_8sdp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:text="Question No 1"
+        android:textSize="@dimen/_17sdp"
+        android:textStyle="bold"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        android:inputType="textImeMultiLine"
+        android:elevation="@dimen/_5sdp"/>
+    <Button
+        android:id="@+id/option_A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:text="optionA"
+        android:background="@drawable/unselected_btn"
+        android:elevation="@dimen/_3sdp"
+        android:translationZ="@dimen/_3sdp"
+        android:stateListAnimator="@null"
+        android:textSize="@dimen/_17sdp"/>
+
+    <Button
+        android:id="@+id/option_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:text="optionB"
+        android:background="@drawable/unselected_btn"
+        android:elevation="@dimen/_3sdp"
+        android:translationZ="@dimen/_3sdp"
+        android:stateListAnimator="@null"
+        android:textSize="@dimen/_17sdp"/>
+
+    <Button
+        android:id="@+id/option_C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:text="optionC"
+        android:background="@drawable/unselected_btn"
+        android:elevation="@dimen/_3sdp"
+        android:translationZ="@dimen/_3sdp"
+        android:stateListAnimator="@null"
+        android:textSize="@dimen/_17sdp"/>
+
+    <Button
+        android:id="@+id/option_D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:text="optionD"
+        android:background="@drawable/unselected_btn"
+        android:elevation="@dimen/_3sdp"
+        android:translationZ="@dimen/_3sdp"
+        android:stateListAnimator="@null"
+        android:textSize="@dimen/_17sdp"/>
+
+
+
+
+
+
+
+</LinearLayout>

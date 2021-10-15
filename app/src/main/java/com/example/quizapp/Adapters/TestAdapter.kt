@@ -16,9 +16,8 @@ import com.example.quizapp.R
 import com.example.quizapp.StartTestActivity
 
 
-
-
-class TestAdapter(var context: Context, myList: List<TestModel>?, var category: String?):RecyclerView.Adapter<ViewHolder>() {
+class TestAdapter(var context: Context, myList: List<TestModel>?, var category: String?) :
+    RecyclerView.Adapter<ViewHolder>() {
 
 
     private var testList = myList
@@ -29,17 +28,17 @@ class TestAdapter(var context: Context, myList: List<TestModel>?, var category: 
     }
 
 
-    class ViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
-        var testNo :TextView
-        var progressBar : ProgressBar
-        var topScore : TextView
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var testNo: TextView
+        var progressBar: ProgressBar
+        var topScore: TextView
         var myCardViewToShowPercentage: CardView? = null
 
         init {
 
-            testNo=itemView.findViewById(R.id.tv_title)
-            topScore=itemView.findViewById(R.id.scoretext)
-            progressBar=itemView.findViewById(R.id.progressbar_test)
+            testNo = itemView.findViewById(R.id.tv_title)
+            topScore = itemView.findViewById(R.id.scoretext)
+            progressBar = itemView.findViewById(R.id.progressbar_test)
             myCardViewToShowPercentage = itemView.findViewById(R.id.user_test_percentage_layout)
         }
 
@@ -48,16 +47,16 @@ class TestAdapter(var context: Context, myList: List<TestModel>?, var category: 
     }
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.test_item_layout, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.test_item_layout, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = testList!![position]
 
-       // Toast.makeText(context, "Inside OnBinde" +data.time.toInt(), Toast.LENGTH_LONG).show()
+        // Toast.makeText(context, "Inside OnBinde" +data.time.toInt(), Toast.LENGTH_LONG).show()
 
         holder.testNo.text = data.testId
 
@@ -67,17 +66,16 @@ class TestAdapter(var context: Context, myList: List<TestModel>?, var category: 
 
         holder.myCardViewToShowPercentage!!.setOnClickListener(View.OnClickListener {
 
-            Toast.makeText(context, ""+data.topScore, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "" + data.topScore, Toast.LENGTH_LONG).show()
 
             val intent = Intent(context, StartTestActivity::class.java)
             intent.putExtra("categoryName", myCategoryName)
             intent.putExtra("myScore", data.topScore)
             intent.putExtra("testNo", data.testId)
             context.startActivity(intent)
-           // (context as Activity).finish()
+            // (context as Activity).finish()
         })
     }
-
 
 
     override fun getItemCount(): Int {

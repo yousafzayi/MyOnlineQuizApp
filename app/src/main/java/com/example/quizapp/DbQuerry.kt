@@ -3,6 +3,7 @@ package com.example.quizapp
 import android.util.ArrayMap
 import android.util.Log
 import com.example.quizapp.Models.CategoryModel
+import com.example.quizapp.Models.QuestionModel
 import com.example.quizapp.Models.TestModel
 import com.example.quizapp.interfaces.categoriesListener
 import com.google.android.gms.tasks.OnCompleteListener
@@ -17,7 +18,11 @@ object DbQuerry {
     val g_firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     var g_catList = arrayListOf<CategoryModel>()
     val g_testList = arrayListOf<TestModel>()
+    var g_questionList = arrayListOf<QuestionModel>()
     var g_selected_cat_Index = 0
+    var g_selected_test_Index = 0
+
+
 
     val TAG: String = "QuizeApp"
 
@@ -48,9 +53,13 @@ history of login user like the marks in attempted quiz */
         g_firestore.collection("Quiz").get().addOnSuccessListener { queryDocumentSnapshots ->
             for (doc in queryDocumentSnapshots) {
                 //categoriesList.add(CategoryModel(doc.getString("Name").toString(), doc.getString("Cat_Id").toString(), doc.getLong("No_Of_Test").toString()))
-                g_catList.add(CategoryModel(doc.getString("Name").toString(),
-                    doc.getString("Cat_Id").toString(),
-                    "${doc.getLong("No_Of_Test").toString()} Tests"))
+                g_catList.add(
+                    CategoryModel(
+                        doc.getString("Name").toString(),
+                        doc.getString("Cat_Id").toString(),
+                        "${doc.getLong("No_Of_Test").toString()} Tests"
+                    )
+                )
             }
             Log.wtf("HELLO", g_catList.size.toString())
             completeListener.onSuccess(g_catList)
@@ -59,13 +68,43 @@ history of login user like the marks in attempted quiz */
         }
     }
 
+    fun loadQuestion(completeListener: MyCompleteListener) {
 
-    fun loadTestData(completeListener: MyCompleteListener) : List<TestModel>
-    {
+        g_questionList.clear()
+        g_firestore.collection("Questions")
+            .whereEqualTo("CATEGORY", g_catList.get(g_selected_cat_Index).docId)
+            .whereEqualTo("TEST", g_testList.get(g_selected_test_Index).testId)
+            .get()
+            .addOnSuccessListener { queryDocumentSnapshots ->
+                for (doc in queryDocumentSnapshots) {
+                    g_questionList.add(
+                        QuestionModel(
+                            doc.getString("QUESTION").toString(),
+                            doc.getString("A").toString(),
+                            doc.getString("B").toString(),
+                            doc.getString("C").toString(),
+                            doc.getString("D").toString(),
+                            doc.getLong("ANSWER")
+
+                        )
+                    )
+
+                }
+                completeListener.onSucess()
+
+
+            }
+            .addOnFailureListener {
+                completeListener.onFailure()
+            }
+
+    }
+
+
+    fun loadTestData(completeListener: MyCompleteListener): List<TestModel> {
 
         Log.d(TAG, "My Category List : " + g_catList);
         Log.d(TAG, "Document ID : " + g_catList.get(g_selected_cat_Index).docId);
-
 
 
 //        g_firestore.collection("Quiz").document(g_catList.get(g_selected_cat_Index).docId)
@@ -79,8 +118,7 @@ history of login user like the marks in attempted quiz */
             .get().addOnCompleteListener(OnCompleteListener {
 
                 g_testList.clear()
-                if (it.isSuccessful)
-                {
+                if (it.isSuccessful) {
                     val document: DocumentSnapshot = it.getResult()!!
 
 //                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
@@ -88,7 +126,7 @@ history of login user like the marks in attempted quiz */
 //                    Log.d(TAG, "db lastName getString() is: " +document.getLong("Test1_Time"));
 
 
-                    val ID1 =document.getString("Test1_Id")
+                    val ID1 = document.getString("Test1_Id")
                     val Time1 = document.getLong("Test1_Time")
 
                     val ID2 = document.getString("Test2_Id")
@@ -97,18 +135,21 @@ history of login user like the marks in attempted quiz */
                     val ID3 = document.getString("Test3_Id")
                     val Time3 = document.getString("Test3_Time")
 
-                    g_firestore.collection("Users").document(FirebaseAuth.getInstance().currentUser!!.uid)
+                    g_firestore.collection("Users")
+                        .document(FirebaseAuth.getInstance().currentUser!!.uid)
                         .get().addOnCompleteListener { task ->
                             if (task.isSuccessful() && task.getResult() != null) {
                                 val userTopScore = task.getResult()!!.getString("Total_score")
 
 //                                val email: String? = task.getResult()!!.getString("Email")
 //                                val phone: String? = task.getResult()!!.getString("Phone")
-//                                //other stuff
+//                                //other stuff  userTopScore!!
 
-                                g_testList.add(TestModel(ID1, userTopScore!!, Time1.toString()))
-                                g_testList.add(TestModel(ID2, userTopScore!!, Time2.toString()))
-                                g_testList.add(TestModel(ID3, userTopScore!!, Time3.toString()))
+                                g_testList.add(TestModel(ID1, "0", Time1.toString()))
+                                g_testList.add(TestModel(ID2, "0", Time2.toString()))
+                                g_testList.add(TestModel(ID3, "0", Time3.toString()))
+
+
 
                             } else {
                                 //deal with error
@@ -125,38 +166,34 @@ history of login user like the marks in attempted quiz */
 
             })
 
-            /*.addOnSuccessListener {
+        /*.addOnSuccessListener {
 
-                val noOfTest = g_catList.get(g_selected_cat_Index).noOfTests
+            val noOfTest = g_catList.get(g_selected_cat_Index).noOfTests
 
-                for (element in g_catList) {
+            for (element in g_catList) {
 
-                    element.
-                    Log.d(TAG, "loadTestData: "+element)
-                    g_testList.add(TestModel("1",0,"5min"))
+                element.
+                Log.d(TAG, "loadTestData: "+element)
+                g_testList.add(TestModel("1",0,"5min"))
 
-
-                }
-
-
-
-                completeListener.onSucess()
 
             }
-            .addOnFailureListener {
-                completeListener.onFailure()
-            }*/
+
+
+
+            completeListener.onSucess()
+
+        }
+        .addOnFailureListener {
+            completeListener.onFailure()
+        }*/
         Log.d(TAG, "List: " + g_testList)
         return g_testList
 
     }
+
 }
-//    fun loadQuestion() {
-//    g_firestore.collection("Questions")
-//        .whereEqualTo("Category",catList.get(g_selected_cat_Index).docId)//getDocId()
-//
-//
-//    }
+
 
 
 
